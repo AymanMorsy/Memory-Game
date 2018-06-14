@@ -1,0 +1,240 @@
+
+/* genral setting */
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Bungee+Inline');
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #13a5bd;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* cotainer */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header h1 {
+    font-family: 'Bungee Inline', cursive;
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 600px;
+    min-height: 600px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 25px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+    color:gold;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+i.fa.fa-redo {
+    padding: 0px 10px;
+}
+
+
+/* timer */
+
+p#timer {
+    font-size: 25px;
+    margin: 0;
+}
+
+/* media screen */
+
+@media only screen and (max-width: 800px) {
+    .deck {
+      max-width: 500px;
+      min-height: auto;
+      padding-bottom: 17px;
+    }
+  
+    .deck .card {
+      height: 100px;
+      width: 100px;
+      margin-bottom: 17px;
+    }
+  
+    .deck .card.open {
+      font-size: 30px;
+    }
+  
+    .score-panel {
+      max-width: 250px;
+      padding-bottom: 0;
+      display: block;
+      text-align: center;
+      line-height: 1.7em;
+    }
+  
+    header h1 {
+      margin: 0;
+      padding:0;
+      font-size: 40px;
+      line-height: 2;
+    }
+}
+
+  @media only screen and (max-width: 525px) {
+    .deck {
+      max-width: 300px;
+      min-height: auto;
+      padding: 12px;
+    }
+  
+    .deck .card {
+      height: 60px;
+      width: 60px;
+      margin-bottom: 10px;
+    }
+  
+    .deck .card.open {
+      font-size: 20px;
+    }
+  
+    .score-panel {
+      max-width: 275px;
+      padding-bottom: 0;
+      display: block;
+      text-align: center;
+      line-height: 1.7em;
+    }
+  
+    header h1 {
+        font-size: 35px;
+    }
+  }
+
+
+
+  /* modual Pop up */
+
+  .modual-container{
+    width:100%; 
+    height:100%;
+    margin:0;
+    padding: 0;
+    background-color:rgba(20,0,0,0.5);
+    text-align:center;
+    position: fixed;
+    display: none;
+  }
+
+  .congrat{
+      margin: 0;
+      letter-spacing: 4px;
+      font-family: Arial, Helvetica, sans-serif
+  }
+  .item{
+    box-sizing: border-box;
+    display:inline-block;
+    width: 270px;
+    background-color:green;
+    margin-top:15%;
+  } 
+  
+  .modual-body {
+    min-height: 100px;
+    padding: 8px;
+    background-color: #d0e5f1;
+}
+
+  .result {
+    list-style-type: none;
+    padding: 0;
+}
+
+.result li{
+   
+    padding: 2px;
+}
+footer{
+    padding: 5px;
+}
